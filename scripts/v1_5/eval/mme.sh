@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CKPT_NAME=llava-v1.5-7b_36-tokens_scene-graph
+CKPT_NAME=llava-v1.5-7b_36-tokens
 MODEL_PATH=/home/fmy/data/llava-v1.5-7b
 
 export CUDA_VISIBLE_DEVICES=1
@@ -10,9 +10,7 @@ python -m llava.eval.model_vqa_loader \
     --image-folder /home/fmy/data/LLaVA-main/playground/data/eval/MME/MME_Benchmark_release_version \
     --answers-file /home/fmy/data/LLaVA-main/playground/data/eval/MME/answers/$CKPT_NAME.jsonl \
     --temperature 0 \
-    --conv-mode vicuna_v1 \
-    --add_proto false \
-    --proto_num 0
+    --conv-mode vicuna_v1 
 
 
 cd /home/fmy/data/LLaVA-main/playground/data/eval/MME
