@@ -5,7 +5,7 @@ IFS=',' read -ra GPULIST <<< "$gpu_list"
 
 CHUNKS=${#GPULIST[@]}
 
-CKPT=llava-v1.5-7b_short-caption-clipcap_question_72-tokens_wo-normalize+selector_4400
+CKPT=llava-v1.5-7b_short-caption-clipcap_72-tokens
 MODEL_PATH=/home/fmy/data/llava-v1.5-7b
 
 
@@ -18,8 +18,6 @@ for IDX in $(seq 0 $((CHUNKS-1))); do
         --num-chunks $CHUNKS \
         --chunk-idx $IDX \
         --temperature 0 \
-        --add_proto false \
-        --proto_num 0 \
         --conv-mode vicuna_v1 &
 done
 
@@ -41,4 +39,3 @@ python scripts/convert_seed_for_submission.py \
     --result-file $output_file \
     --result-upload-file /home/fmy/data/LLaVA-main/playground/data/eval/seed_bench/answers_upload/$CKPT.jsonl
 
-# --model-base /public/home/renwu04/fmy/data/vicuna-7b-v1.5 \
