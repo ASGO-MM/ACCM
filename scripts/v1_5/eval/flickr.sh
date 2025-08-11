@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CKPT_NAME=llava-v1.5-7b_short-caption-clipcap_72-tokens+selector_4400
+CKPT_NAME=llava-v1.5-7b_short-caption-clipcap_72-tokens
 MODEL_PATH=/home/fmy/data/llava-v1.5-7b
 
 export CUDA_VISIBLE_DEVICES=0
@@ -10,8 +10,6 @@ python -m llava.eval.model_vqa_caption \
     --image-folder  /home/fmy/data/LLaVA-main/playground/data/eval/Flickr/flickr30k-images \
     --answers-file /home/fmy/data/LLaVA-main/playground/data/eval/Flickr/answers/$CKPT_NAME.jsonl \
     --temperature 0 \
-    --add_proto false \
-    --proto_num 0 \
     --conv-mode vicuna_v1
 
 
