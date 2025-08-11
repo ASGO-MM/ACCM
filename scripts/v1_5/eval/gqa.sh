@@ -5,7 +5,7 @@ IFS=',' read -ra GPULIST <<< "$gpu_list"
 
 CHUNKS=${#GPULIST[@]}
 
-CKPT=llava-v1.5-7b_short-caption-clipcap_question_72-tokens_wo-normalize+selector_4400
+CKPT=llava-v1.5-7b_short-caption-clipcap_72-tokens
 MODEL_PATH=/home/fmy/data/llava-v1.5-7b
 
 SPLIT="llava_gqa_testdev_balanced"
@@ -20,8 +20,6 @@ for IDX in $(seq 0 $((CHUNKS-1))); do
         --num-chunks $CHUNKS \
         --chunk-idx $IDX \
         --temperature 0 \
-        --add_proto false \
-        --proto_num 0 \
         --conv-mode vicuna_v1 &
 done
 
