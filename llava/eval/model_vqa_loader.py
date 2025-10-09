@@ -115,7 +115,7 @@ def eval_model(args):
     model_path = os.path.expanduser(args.model_path)
     model_name = get_model_name_from_path(model_path)
     tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name)
-    model.post_config(args)
+    # model.post_config(args)
     #
     model.to(dtype=torch.bfloat16)
     #
@@ -132,7 +132,7 @@ def eval_model(args):
 
     data_loader = create_data_loader(questions, args.image_folder, tokenizer, image_processor, model.config)
 
-    for (input_ids, image_tensor, prompt, prompt_ori, img_path), line in tqdm(zip(data_loader, questions), total=len(questions)):
+    for (input_ids, image_tensor, prompt, prompt_ori), line in tqdm(zip(data_loader, questions), total=len(questions)):
         # ipdb.set_trace()
         idx = line["question_id"]
         cur_prompt = line["text"]
