@@ -137,7 +137,7 @@ class LlavaMetaForCausalLM(ABC):
         
 
         new_image_feature = x_others
-        assert x_others.shape[1] == 36
+        assert x_others.shape[1] == 18
 
 
         # projector
