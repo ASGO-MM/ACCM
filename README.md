@@ -7,7 +7,7 @@ Our work has been accepted by ACM Multimedia 2025. [[Paper](https://arxiv.org/pd
 </div>
 
 ## Install
-Prepare the environment as [LLaVA-1.5](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install).
+Prepare the environment as [LLaVA-1.5](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install). And substitute utils.py in [our Huggingface homepage](https://huggingface.co/fumingyu064/ACCM) for original file under /xxx/anaconda3/envs/env_name/lib/python3.10/site-packages/transformers/generation/ folder. Substitute modeling_clip.py in [our Huggingface homepage](https://huggingface.co/fumingyu064/ACCM) for original file under /xxx/anaconda3/envs/env_name/lib/python3.10/site-packages/transformers/models/clip/ folder.
 
 ## Benchmarks
 We use 7 benchmarks, including MME, MMBench, POPE, MMVP, SEED, GQA and Flickr30k. For MMVP, we include it in our project. For Flickr30k, download from [our Huggingface homepage](https://huggingface.co/fumingyu064/ACCM). For preparing the other benchmarks, please refer to [LLaVA-1.5](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md).
