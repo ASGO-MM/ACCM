@@ -13,7 +13,7 @@ import json
 from typing import Tuple, Optional, Union
 import ipdb
 import json
-import clip
+# import clip
 import skimage.io as io
 from PIL import Image
 import ipdb
