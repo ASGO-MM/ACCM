@@ -13,7 +13,7 @@ import ipdb
 import math
 from .clipcap_model import ClipCaptionModel
 from .decoding_scheme import generate_beam, generate_nucleus, generate_diverse_beam, generate_top_k, generate_greedy
-import clip
+# import clip
 from .model import longclip
 from .selector_transformer import TransformerSelector
 from enum import Enum
@@ -74,8 +74,8 @@ class CLIPVisionTower(nn.Module):
         self.select_feature = 'cls_patch'
         self.total_tokens = 0
         
-        self.visual_token_num = 36
-        self.text_num = 20
+        self.visual_token_num = 18
+        self.text_num = 12
 
         if not delay_load:
             self.load_model()
