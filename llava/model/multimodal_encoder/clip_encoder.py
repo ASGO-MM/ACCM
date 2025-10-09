@@ -348,7 +348,7 @@ class CLIPVisionTower(nn.Module):
                 image_features.append(image_feature)
         else:
             
-            cls_features, image_features, x_others, supplement_info = self.token_prune_merge_advanced_plus(images, prompt if_adaptive=True, reduction_ratio=1/8) 
+            cls_features, image_features, x_others, supplement_info = self.token_prune_merge_advanced_plus(images, prompt, if_adaptive=True, reduction_ratio=1/8) 
 
         return cls_features, image_features, x_others, supplement_info
 
