@@ -20,36 +20,6 @@ import ipdb
 from transformers.activations import NewGELUActivation
 import math
 
-'''
-class Selector_Mlp(nn.Module):
-    
-    def __init__(self):
-        super(Selector_Mlp, self).__init__()
-        
-        self.gpt_embedding_size = 768
-        #self.head = nn.Linear(self.gpt_embedding_size, 1)
-        self.head = nn.Sequential(
-            nn.Linear(self.gpt_embedding_size, self.gpt_embedding_size // 2),
-            #NewGELUActivation(),
-            nn.ReLU(),
-            nn.Linear(self.gpt_embedding_size // 2, 1),
-        )
-
-        # nn.init.kaiming_uniform_(self.head[0].weight, a=math.sqrt(5))
-        # nn.init.zeros_(self.head[2].weight)
-        # nn.init.zeros_(self.head[0].bias)
-        # nn.init.zeros_(self.head[2].bias)
-        
-
-    def forward(self, embeddings: torch.Tensor):
-        #eos_embedding = torch.stack(eos_embedding)    # (B, C)
-        embeddings = embeddings.to(dtype=self.head[0].weight.dtype)
-        score = self.head(embeddings)  # (B, 1)
-        score = score.squeeze(dim=1).softmax(-1)
-        #ipdb.set_trace()
-        return score
-'''
-
 
 class TransformerSelector(nn.Module):
     def __init__(self, embedding_dim=768, num_layers=4, num_heads=8, dim_feedforward=1536, dropout=0.1):
