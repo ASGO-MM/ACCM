@@ -26,5 +26,4 @@ For example, the evaluation for MME is:
 bash scripts/v1_5/eval/mme.sh
 ```
 
-## Training
-Coming soon.
+
