@@ -19,7 +19,7 @@ We use 7 benchmarks, including MME, MMBench, POPE, MMVP, SEED, GQA and Flickr30k
 
 ## Evaluation
 1. Download the checkpoints from [our Huggingface homepage](https://huggingface.co/fumingyu064/ACCM) and modify the path for the caption model and classifier in clip_encoder.py. The wieghts of [GPT2](https://huggingface.co/openai-community/gpt2) and [LongCLIP](https://huggingface.co/BeichenZhang/LongCLIP-L) are also needed and remember to modify the path in clip_encoder.py. 
-2. Set the visual token number in [clip_encoder.py](https://github.com/ASGO-MM/ACCM/blob/0c5f93294fc2243791879b3aeda6dedde28a3ab7/llava/model/multimodal_encoder/clip_encoder.py#L77) and [llava_arch.py](https://github.com/ASGO-MM/ACCM/blob/0c5f93294fc2243791879b3aeda6dedde28a3ab7/llava/model/llava_arch.py#L140).
+2. Set the visual token number in [clip_encoder.py](https://github.com/ASGO-MM/ACCM/blob/517d864ba1f3950ae6df6401adf89f08d685615b/llava/model/multimodal_encoder/clip_encoder.py#L215).
 3. Run the scripts under [eval folder](https://github.com/ASGO-MM/ACCM/tree/main/scripts/v1_5/eval). Remember to modify the MODEL_PATH, CKPT_NAME and dataset path in the scripts.
 For example, the evaluation for MME is:
 ```shell
