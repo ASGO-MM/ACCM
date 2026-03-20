@@ -18,7 +18,7 @@ We have made improvements to the original ACCM by replacing supplemental caption
 We use 7 benchmarks, including MME, MMBench, POPE, MMVP, SEED, GQA and Flickr30k. For MMVP, we include it in our project. For Flickr30k, download from [our Huggingface homepage](https://huggingface.co/fumingyu064/ACCM). For preparing the other benchmarks, please refer to [LLaVA-1.5](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md).
 
 ## Evaluation
-1. Download the checkpoints from [our Huggingface homepage](https://huggingface.co/fumingyu064/ACCM) and modify the path for the caption model and classifier in clip_encoder.py. The wieghts of [GPT2](https://huggingface.co/openai-community/gpt2) and [LongCLIP](https://huggingface.co/BeichenZhang/LongCLIP-L) are also needed and remember to modify the path in clip_encoder.py. 
+1. Download the checkpoints from [our Huggingface homepage](https://huggingface.co/fumingyu064/ACCM) and modify the path for the scene graph model in [clip_encoder.py](https://github.com/ASGO-MM/ACCM/blob/5a4d1034285323bca46218466cb6806ba6182aed/llava/model/multimodal_encoder/clip_encoder.py#L145).
 2. Set the visual token number in [clip_encoder.py](https://github.com/ASGO-MM/ACCM/blob/517d864ba1f3950ae6df6401adf89f08d685615b/llava/model/multimodal_encoder/clip_encoder.py#L215).
 3. Run the scripts under [eval folder](https://github.com/ASGO-MM/ACCM/tree/main/scripts/v1_5/eval). Remember to modify the MODEL_PATH, CKPT_NAME and dataset path in the scripts.
 For example, the evaluation for MME is:
